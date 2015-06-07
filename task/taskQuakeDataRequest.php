@@ -107,7 +107,9 @@ try {
             }
         }
 
-        $dbQuakeData->insertQuakeData($registerParam);
+        if ($quakeDataDetail) {
+            $dbQuakeData->insertQuakeData($registerParam);
+        }
 
         // 取得対象年月日を1日進める
         file_put_contents(QUAKE_DATA_REQUEST_TARGET_DATE, mktime(0, 0, 0, $targetM, $targetD+1, $targetY));
