@@ -1,3 +1,4 @@
 config/constantSiteBase.php
 task/targetDate.txt
-task/log/taskQuakeDataRequest.log
+task/log/taskQuakeDataHttpRequest.log
+task/log/taskQuakeDataJsonRequest.log
