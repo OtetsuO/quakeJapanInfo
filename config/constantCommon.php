@@ -12,26 +12,34 @@ define('QUAKE_DATA_HTTP_REQUEST_URL',        'http://p2pquake.ddo.jp/p2pquake/ap
 define('QUAKE_DATA_HTTP_REQUEST_TARGET_DATE', dirname(__FILE__).'/../task/targetDate.txt');
 define('QUAKE_DATA_HTTP_REQUEST_LOG_DIR',     dirname(__FILE__).'/../task/log/');
 define('QUAKE_DATA_HTTP_REQUEST_LOG_FILE',   'taskQuakeDataHttpRequest.log');
+define('QUAKE_DATA_HTTP_REQUEST_MAX_SCALE',
+            serialize(array(
+                '0'   => 0,  // なし
+                '1'   => 10, // 震度1
+                '2'   => 20, // 震度2
+                '3'   => 30, // 震度3
+                '4'   => 40, // 震度4
+                '5弱' => 45, // 震度5弱
+                '5強' => 50, // 震度5強
+                '6弱' => 55, // 震度6弱
+                '6強' => 60, // 震度6強
+                '7'   => 70, // 震度7
+            ))
+);
+define('QUAKE_DATA_HTTP_REQUEST_TUNAMI_PARAM',
+            serialize(array(
+                0  => 0, // なし
+                1  => 6, // あり
+                2  => 2, // 調査中
+                3  => 1, // 不明
+            ))
+);
 
 // P2P地震情報 取得API(JASON)
 define('QUAKE_DATA_JSON_REQUEST_URL',      'http://api.p2pquake.com/v1/human-readable?limit=');
 define('QUAKE_DATA_JSON_REQUEST_LIMIT',    100); // jsonデータ取得時の件数(指定なし=10件、最大値=100件)
 define('QUAKE_DATA_JSON_REQUEST_LOG_DIR',  dirname(__FILE__).'/../task/log/');
 define('QUAKE_DATA_JSON_REQUEST_LOG_FILE', 'taskQuakeDataJsonRequest.log');
-define('QUAKE_DATA_JSON_REQUEST_MAX_SCALE',
-            serialize(array(
-                0 =>  0, // なし
-                10 => 1, // 震度1
-                20 => 2, // 震度2
-                30 => 3, // 震度3
-                40 => 4, // 震度4
-                45 => 4, // 震度5弱
-                50 => 5, // 震度5強
-                55 => 6, // 震度6弱
-                60 => 6, // 震度6強
-                70 => 7, // 震度7
-            ))
-);
 define('QUAKE_DATA_JSON_REQUEST_TUNAMI_PARAM',
             serialize(array(
                 'None'         => 0, // なし
